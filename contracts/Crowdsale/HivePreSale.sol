@@ -1,7 +1,7 @@
 pragma solidity ^0.4.18;
 
-import "../Token/SafeMath.sol";
-import "../Token/Hive.sol";
+import "../SafeMath.sol";
+import "../Hive.sol";
 
 contract HivePreSale {
 

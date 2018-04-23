@@ -3,7 +3,7 @@ pragma solidity ^0.4.18;
 import "./ERC20.sol";
 import "./SafeMath.sol";
 
-contract Hive is ERC20 {
+contract UHive is ERC20 {
 
     using SafeMath for uint;
     string public constant name = "UHIVE";
@@ -52,7 +52,7 @@ contract Hive is ERC20 {
     }
 
     // Constructor
-    function Hive() public {
+    function UHive() public {
         owner = msg.sender;
         balances[owner] = _totalSupply;
     }

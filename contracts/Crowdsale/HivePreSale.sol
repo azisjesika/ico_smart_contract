@@ -3,7 +3,7 @@ pragma solidity ^0.4.18;
 import "../SafeMath.sol";
 import "../Hive.sol";
 
-contract HivePreSale {
+contract UHivePreSale {
 
     using SafeMath for uint256;
     // The token being sold
@@ -23,8 +23,7 @@ contract HivePreSale {
 
     //Flag paused sale
     bool public paused;
-
-    uint256 public openingTime;
+    
     uint256 public closingTime;
 
     uint256 public minimumWei;
@@ -33,7 +32,7 @@ contract HivePreSale {
     * @dev Reverts if not in crowdsale time range. 
     */
     modifier onlyWhileOpen {
-        require(now >= openingTime && now <= closingTime && paused == false);
+        require(now <= closingTime && paused == false);
         _;
     }
 
@@ -43,12 +42,11 @@ contract HivePreSale {
         _;
     }
 
-    function HivePreSale(uint256 _hivePerEther, address _vaultWallet, Hive _token, uint256 _openingTime, uint256 _closingTime) public {
+    function HivePreSale(uint256 _hivePerEther, address _vaultWallet, Hive _token, uint256 _closingTime) public {
         hivePerEther = _hivePerEther;
         vaultWallet = _vaultWallet;
         token = _token;
-        owner = msg.sender;
-        openingTime = _openingTime;
+        owner = msg.sender;        
         closingTime = _closingTime;
         paused = false;
         hivePerUSD = 667; //each hive is 0.0015$

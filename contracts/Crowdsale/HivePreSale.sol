@@ -49,8 +49,8 @@ contract UHivePreSale {
         owner = msg.sender;        
         closingTime = _closingTime;
         paused = false;
-        hivePerUSD = 667; //each hive is 0.0015$
-        minimumWei = 100000000000000000; //0.1 Ether
+        hivePerUSD = 500; //each hive is 0.002$
+        minimumWei = 50000000000000000; //0.05 Ether
     }
 
     function () external payable {
